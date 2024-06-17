@@ -1,29 +1,22 @@
-import React from "react";
+// components/atoms/ResultButton.tsx
+import React from 'react';
 
-interface ButtonProps {
-  text: string;
+interface ResultButtonProps {
   textColor: string;
   backgroundColor: string;
+  onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  text,
-  textColor,
-  backgroundColor,
-}) => {
+const ResultButton: React.FC<ResultButtonProps> = ({ textColor, backgroundColor, onClick }) => {
   return (
     <button
-      style={{
-        color: textColor,
-        backgroundColor: backgroundColor,
-        padding: "10px 20px",
-        border: "none",
-        borderRadius: "5px",
-        cursor: "pointer",
-      }}>
-      {text}
+      onClick={onClick}
+      style={{ color: textColor, backgroundColor }}
+      className="p-2 rounded"
+    >
+      Result
     </button>
   );
 };
 
-export default Button;
+export default ResultButton;
